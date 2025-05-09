@@ -1,0 +1,28 @@
+services:
+  client:
+    build:
+      context: .
+      dockerfile: ./apps/client/Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/client:/app/apps/client
+      - /app/apps/client/node_modules
+      - /app/apps/client/.next
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: .
+      dockerfile: ./apps/server/Dockerfile.dev
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./apps/server:/app/apps/server
+      - /app/apps/server/node_modules
+      - ./apps/server/sqlite.db:/app/apps/server/sqlite.db
+    environment:
+      - NODE_ENV=development
