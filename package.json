@@ -1,0 +1,45 @@
+{
+  "name": "team-03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm --filter client build",
+    "start": "pnpm -r run start",
+    "dev": "pnpm --parallel -r dev",
+    "dev:client": "pnpm --filter client dev --turbo",
+    "dev:server": "pnpm --filter server dev",
+    "clean": "pnpm -r exec rm -rf dist node_modules && rm -rf pnpm-lock.yaml && rm -rf apps/client/.next && rm -rf apps/server/dist",
+    "test": "pnpm --parallel -r test",
+    "test:client": "pnpm --filter client test",
+    "test:server": "pnpm --filter server test",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up --build",
+    "docker:prod": "docker-compose up --build",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "better-sqlite3",
+      "esbuild",
+      "sharp"
+    ],
+    "ignoredBuiltDependencies": [
+      "@swc/core"
+    ]
+  },
+  "packageManager": "pnpm@10.7.0",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0"
+  },
+  "dependencies": {
+    "@trpc/client": "^11.1.0",
+    "@trpc/react-query": "^11.1.0",
+    "@trpc/server": "^11.1.0",
+    "ws": "^8.18.1"
+  }
+}
