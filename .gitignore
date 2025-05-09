@@ -1,0 +1,31 @@
+.vscode
+.DS_Store
+__MACOSX
+*.vim
+
+# drizzle
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+
+# Google client secret
+# adding all .json just in case
+client_secret.json
+.googlekeys.json
+*.json
