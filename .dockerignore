@@ -1,0 +1,9 @@
+node_modules
+.next
+dist
+.git
+.env*
+*.md
+.vscode
+.DS_Store
+pnpm-debug.log*
